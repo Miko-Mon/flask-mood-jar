@@ -30,7 +30,10 @@
       </div>
     </nav>
 
-    <main>{{ page_content }}</main>
+    <main>
+      {% block page_content %}
+      {% endblock %}
+    </main>
 
     <footer>
       &copy; 2026 HeartScape. All rights reserved.
