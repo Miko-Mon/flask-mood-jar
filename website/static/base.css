@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* ==========================
+           NAVBAR
+        ========================== */
+
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #222;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nav-links,
+.auth-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a,
+.auth-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.auth-links a:hover {
+  color: #0077cc;
+}
+
+/* ==========================
+           MAIN CONTENT
+        ========================== */
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* ==========================
+           FOOTER
+        ========================== */
+
+footer {
+  background: #ffffff;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+}
+
+/* ==========================
+           MOBILE
+        ========================== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links,
+  .auth-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
