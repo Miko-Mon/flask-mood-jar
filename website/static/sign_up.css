@@ -6,7 +6,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   min-height: 75vh;
   padding: 2rem;
 }
@@ -18,27 +17,21 @@
 .signup-card {
   width: 100%;
   max-width: 500px;
-
   background: white;
-
   padding: 2.5rem;
-
   border-radius: 12px;
-
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .signup-card h1 {
   text-align: center;
   margin-bottom: 0.5rem;
-
   font-size: 2rem;
 }
 
 .signup-subtitle {
   text-align: center;
   color: #777;
-
   margin-bottom: 2rem;
 }
 
@@ -59,27 +52,20 @@
 
 .form-group label {
   margin-bottom: 0.45rem;
-
   font-weight: 600;
 }
 
 .form-group input {
   padding: 0.85rem 1rem;
-
   font-size: 1rem;
-
   border: 1px solid #ccc;
-
   border-radius: 8px;
-
   transition: 0.2s;
 }
 
 .form-group input:focus {
   outline: none;
-
   border-color: #0077cc;
-
   box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.15);
 }
 
@@ -89,23 +75,14 @@
 
 .btn-primary {
   margin-top: 0.5rem;
-
   padding: 0.95rem;
-
   border: none;
-
   border-radius: 8px;
-
   background: #0077cc;
-
   color: white;
-
   font-size: 1rem;
-
   font-weight: 600;
-
   cursor: pointer;
-
   transition: 0.2s;
 }
 
@@ -119,17 +96,13 @@
 
 .login-link {
   text-align: center;
-
   margin-top: 1.5rem;
-
   color: #666;
 }
 
 .login-link a {
   text-decoration: none;
-
   color: #0077cc;
-
   font-weight: 600;
 }
 
