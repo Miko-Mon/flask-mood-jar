@@ -18,7 +18,9 @@
                 type="text"
                 id="username"
                 name="username"
+                value="{{ request.form.get('username', '') }}"
                 placeholder="Enter your username"
+                autocomplete="username"
                 required
                 />
             </div>
@@ -29,7 +31,9 @@
                 type="email"
                 id="email"
                 name="email"
+                value="{{ request.form.get('email', '') }}"
                 placeholder="Enter your email"
+                autocomplete="email"
                 required
                 />
             </div>
@@ -41,6 +45,7 @@
                 id="password"
                 name="password"
                 placeholder="Enter your password"
+                autocomplete="new-password"
                 required
                 />
             </div>
@@ -52,6 +57,7 @@
                 id="confirm_password"
                 name="confirm_password"
                 placeholder="Confirm your password"
+                autocomplete="new-password"
                 required
                 />
             </div>
