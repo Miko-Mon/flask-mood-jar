@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/base.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     {% block extra_css %}{% endblock %}
     <title>{{ title }}</title>
   </head>
@@ -12,21 +12,21 @@
       <div class="nav-container">
         <!-- Logo -->
         <div class="logo">
-          <a href="/"> HeartScape</a>
+          <a href="{{ url_for('views.home_page') }}"> HeartScape</a>
         </div>
 
         <!-- Main Navigation -->
         <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/quotes">Quotes</a></li>
-          <li><a href="/mood-jar">Mood Jar</a></li>
-          <li><a href="/mood-tracker">Mood Tracker</a></li>
+          <li><a href="{{ url_for('views.home_page') }}">Home</a></li>
+          <li><a href="{{ url_for('views.get_quotes') }}">Quotes</a></li>
+          <li><a href="{{ url_for('views.mood_jar') }}">Mood Jar</a></li>
+          <li><a href="{{ url_for('views.mood_tracker') }}">Mood Tracker</a></li>
         </ul>
 
         <!-- Authentication -->
         <ul class="auth-links">
-          <li><a href="/sign-up">Sign Up</a></li>
-          <li><a href="/login">Login</a></li>
+          <li><a href="{{ url_for('auth.sign_up') }}">Sign Up</a></li>
+          <li><a href="{{ url_for('auth.login') }}">Login</a></li>
         </ul>
       </div>
     </nav>

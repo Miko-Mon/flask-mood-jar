@@ -1,7 +1,7 @@
 {% extends "base.html" %} 
 
 {% block extra_css %}
-    <link rel="stylesheet" href="../static/sign_up.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='sign_up.css') }}">
 {% endblock %} 
 
 {% block page_content %}
@@ -61,7 +61,7 @@
 
             <p class="login-link">
             Already have an account?
-            <a href="/login">Log In</a>
+            <a href="{{ url_for('auth.login') }}">Log In</a>
             </p>
         </div>
     </section>
