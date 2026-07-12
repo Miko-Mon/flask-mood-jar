@@ -102,3 +102,71 @@ footer {
     gap: 0.75rem;
   }
 }
+
+/* ==========================================
+   FLASH MESSAGES
+========================================== */
+
+.flash-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 1rem auto 0;
+    padding: 0 2rem;
+}
+
+.flash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    border-radius: 8px;
+
+    font-weight: 500;
+}
+
+.flash-message {
+    flex: 1;
+}
+
+.flash-close {
+    margin-left: 1rem;
+
+    border: none;
+    background: transparent;
+
+    font-size: 1.25rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: inherit;
+
+    opacity: 0.7;
+
+    transition: opacity 0.2s;
+}
+
+.flash-close:hover {
+    opacity: 1;
+}
+
+.flash.error {
+    background: #fde8e8;
+    border: 1px solid #f5bcbc;
+    color: #a12622;
+}
+
+.flash.success {
+    background: #e7f8ed;
+    border: 1px solid #b7e5c4;
+    color: #216738;
+}
+
+.flash.warning {
+    background: #fff8e1;
+    border: 1px solid #f0d98a;
+    color: #8a6d00;
+}
