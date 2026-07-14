@@ -1,21 +1,17 @@
-import mysql.connector
-from dotenv import load_dotenv
-import os
+from . import db
+from flask_login import UserMixin
+from sqlalchemy.sql import func
 
-load_dotenv()
+class Quote(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    quote = db.Column(db.String(10000), nullable=False)
+    author = db.Column(db.String(300), nullable=False)
+    mood = db.Column(db.String(150), nullable=False)
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-db_host = os.getenv('DB_HOST')
-db_user = os.getenv('DB_USER')
-db_password = os.getenv('DB_PASSWORD')
-db = os.getenv('DB_NAME')
-
-connection = mysql.connector.connect(
-    host = db_host,
-    user = db_user,
-    password = db_password,
-    database = db
-)
-
-if connection.is_connected():
-    print(f"Successfully connected to the {db} database")
-    connection.close()
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(150), nullable=False)
+    quotes = db.relationship('Quote')
