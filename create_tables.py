@@ -1,5 +1,5 @@
-from website import create_app, db
-from website import models
+from heartscape import create_app, db
+from heartscape import models
 
 app = create_app()
 
