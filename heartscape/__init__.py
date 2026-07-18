@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from dotenv import load_dotenv
 import os
 from flask_migrate import Migrate 
+from flask_login import LoginManager
 
 migrate = Migrate()
 
@@ -30,6 +31,16 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
+
+    from .models import User
+    
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login'  # Default view for those who are not logged in
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
 
     from .views import views 
     from .auth import auth
