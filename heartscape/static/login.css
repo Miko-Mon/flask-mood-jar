@@ -94,19 +94,19 @@
    SIGN UP LINK
 ========================================== */
 
-.signup-link {
+.signup-link, .forgot-password {
   text-align: center;
   margin-top: 1.5rem;
   color: #666;
 }
 
-.signup-link a {
+.signup-link a, .forgot-password a {
   color: #0077cc;
   text-decoration: none;
   font-weight: 600;
 }
 
-.signup-link a:hover {
+.signup-link a:hover, .forgot-password a:hover {
   text-decoration: underline;
 }
 
