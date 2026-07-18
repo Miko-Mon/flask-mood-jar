@@ -4,6 +4,7 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from sqlalchemy import or_
+from flask_login import login_user, login_required, logout_user, current_user
 
 auth = Blueprint('auth', __name__)
 
@@ -29,15 +30,18 @@ def login():
             flash("Wrong password. Please try again.", "error")
             return render_template("login.html", title="Login")
 
+        # When login is successful
         flash("Logged in successfully!", "success")
-
+        login_user(user, remember=True)
         return redirect(url_for('views.home_page'))
 
-    return render_template("login.html", title="Login")
+    return render_template("login.html", title="Login", user = current_user)
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return "<h1>Logout</h1>"
+    logout_user()
+    return redirect(url_for('auth.login'))
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
@@ -101,4 +105,4 @@ def sign_up():
 
         return redirect(url_for('auth.login'))
 
-    return render_template("sign_up.html", title="Sign-up")
+    return render_template("sign_up.html", title="Sign-up", user=current_user)
