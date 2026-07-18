@@ -17,16 +17,25 @@
 
         <!-- Main Navigation -->
         <ul class="nav-links">
+          {% if user.is_authenticated %}
           <li><a href="{{ url_for('views.home_page') }}">Home</a></li>
           <li><a href="{{ url_for('views.get_quotes') }}">Quotes</a></li>
           <li><a href="{{ url_for('views.mood_jar') }}">Mood Jar</a></li>
           <li><a href="{{ url_for('views.mood_tracker') }}">Mood Tracker</a></li>
+          {% else %}
+          <li><a href="{{ url_for('views.home_page') }}">Home</a></li>
+          <li><a href="{{ url_for('views.get_quotes') }}">Quotes</a></li>
+          {% endif %}
         </ul>
 
         <!-- Authentication -->
         <ul class="auth-links">
+          {% if user.is_authenticated %}
+          <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+          {% else %}
           <li><a href="{{ url_for('auth.sign_up') }}">Sign Up</a></li>
           <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
